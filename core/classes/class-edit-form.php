@@ -868,7 +868,7 @@ class BPSimpleBlogPostEditForm {
 				}
 
 				if ( ! empty( $tax_options['include'] ) ) {
-					$tax_options['show_all_terms'] = 0;
+					$tax_options['show_all_terms'] = "";
 				}
 
 				echo $this->list_terms_dd( $tax_options );
