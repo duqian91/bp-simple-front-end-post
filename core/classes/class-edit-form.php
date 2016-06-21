@@ -717,7 +717,7 @@ class BPSimpleBlogPostEditForm {
     public function list_terms_dd( $args ) {
 		
         $defaults = array(
-            'show_option_all'	=> 1,
+            'show_option_all'	=> 0,
             'selected'			=> 0,
             'hide_empty'		=> false,
             'echo'				=> false,
