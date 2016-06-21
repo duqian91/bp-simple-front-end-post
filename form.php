@@ -2,7 +2,7 @@
 
 <div class="bp-simple-post-form">
 
-	<form class="standard-form bp-simple-post-form"  method="post" action=""  enctype="multipart/form-data" id="<?php echo $this->get_id();?>">
+	<form class="standard-form bp-simple-post-form"  name="bp-form" method="post" action=""  enctype="multipart/form-data" id="<?php echo $this->get_id();?>">
 
 		<!-- do not modify/remove the line blow -->
 		
@@ -83,8 +83,16 @@
 		<?php endif;?>
 
 		<input  type="hidden" value="<?php echo $_SERVER['REQUEST_URI']; ?>" name="post_form_url"  />
-		<input id="submit" name='bp_simple_post_form_subimitted' type="submit" value="<?php _e('Post','bsfep');?>" />
+		<input id="submit" onsubmit="return validateForm()" name='bp_simple_post_form_subimitted' type="submit" value="<?php _e('Post','bsfep');?>" />
 	</form>
 </div>
+<script>
 
+function validateForm() {
+    var x = document.forms["bp-form"]["custom_fields[description_du_projet]"].value; 
+    if (x == null || x == "") {
+        alert("Name must be filled out");
+        return false;
+    }
+}</script>
 <?php endif; ?>
